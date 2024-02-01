@@ -1,0 +1,70 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color:rgb(180, 210, 227);
+    margin-bottom: 200px;
+    margin-top: 0%;
+    }
+    .container{
+        display: grid;
+        place-items: center;
+    }
+    .traffic-light{
+        width: 200px;
+        height: 400px;
+        border-radius: 60px;
+        display: grid;
+        place-items: center;
+        background-color: #000000;
+        padding: 20px;
+    }
+    .circles{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 4px;
+    }
+    
+    .stick{
+        width: 16px;
+        height: 250px;
+        background-color: rgb(0,0,0,0.5);
+    }
+    .red{
+        background-color: red;
+        box-shadow: 0 0 10px 1px red;
+     }
+    
+    .yellow{
+        background-color: rgb(255, 191, 0);
+        box-shadow: 0 0 10px 1px rgb(255, 191, 0) ;
+     }
+    .green{
+        background-color: green;
+        box-shadow: 0 0 10px 1px green;
+    }
+
+    .purple{
+        background-color: rgb(146, 29, 172);
+        box-shadow: 0 0 10px 1px rgb(146, 29, 172);
+    }
+    
+    .light{
+        box-shadow: 0 0 50px 50px rgb(222 203 203 / 75%); 
+    }
+    
+    button {
+        padding: 10px 15px;
+        margin-top: 20px;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #2980b9;
+      }

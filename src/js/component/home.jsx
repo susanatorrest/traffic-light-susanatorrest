@@ -1,26 +1,65 @@
-import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from 'react';
+import '../../styles/home.css';
 
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  const [color, setColor] = useState('');
+  const [purple, setPurple] = useState(false);
+
+  const changeColor = () => {
+    switch (color) {
+      case 'red':
+        setColor('green');
+        break;
+      case 'yellow':
+        setColor('red');
+        break;
+      case 'green':
+        setColor('yellow');
+        break;
+      default:
+        setColor('red');
+    }
+  };
+
+  const addPurple = () => {
+    setPurple(true);
+    setColor('purple');
+  };
+
+  return (
+    <div className="container">
+      <div className="stick"></div>
+      <div className="traffic-light">
+        <div
+          className={'circles red' + (color === 'red' ? ' light' : '')}
+          onClick={() => {
+            setColor('red');
+            setPurple(false);
+          }}
+        ></div>
+        <div
+          className={'circles yellow' + (color === 'yellow' ? ' light' : '')}
+          onClick={() => {
+            setColor('yellow');
+            setPurple(false);
+          }}
+        ></div>
+        <div
+          className={'circles green' + (color === 'green' ? ' light' : '')}
+          onClick={() => {
+            setColor('green');
+            setPurple(false);
+          }}
+        ></div>
+        {purple && (
+          <div className={'circles purple' + (color === 'purple' ? ' light' : '')}></div>
+        )}
+      </div>
+      <button onClick={changeColor}>CHANGE COLOR</button>
+      <button onClick={addPurple}>ADD PURPLE</button>
+    </div>
+  );
 };
 
 export default Home;
